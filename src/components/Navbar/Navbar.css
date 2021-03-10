@@ -1,0 +1,16 @@
+header {
+  background: #00838f;
+  height: 70px;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif !important;
+  float: left;
+  position: relative;
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+}
+

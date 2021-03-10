@@ -1,0 +1,27 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: outside none none;
+}
+nav {
+  padding: 5px 20px;
+}
+.menu {
+  display: flex;
+  float: right;
+  position: relative;
+  line-height: 8px;
+}
+.menu li {
+  font-size: 20px;
+  padding: 15px 5px;
+  white-space: nowrap;
+}
+
+a:hover {
+  font-weight: bold;
+}

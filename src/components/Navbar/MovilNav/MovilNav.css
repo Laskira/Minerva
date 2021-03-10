@@ -1,0 +1,79 @@
+/*Botton que se manifiesta con responsive*/
+.control-menu {
+  display: block;
+  float: right;
+  position: relative;
+  padding: 0 20px;
+  line-height: 70px;
+}
+
+.control-menu a span {
+  display: inline-block;
+  height: 30px;
+  text-indent: -9999px;
+  width: 40px;
+}
+
+/*Img que cierra el menú principal*/
+.control-menu .close {
+  background-image: url("../../../assets/close-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: none;
+}
+/*Img que abre el menú principal*/
+.control-menu .open {
+  background-image: url("../../../assets/open-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+}
+/*Ocultación de items cuando no sea llamado el responsive*/
+ul.nav-items {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+}
+
+/*Desplegable*/
+#navigation:target ul.nav-items {
+  background: #f0f0f0 none repeat scroll 0 0;
+  height: 10em;
+  transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+}
+
+.close {
+  display: none;
+}
+
+#navigation:target .open {
+  display: none;
+}
+
+#navigation:target .close {
+  display: block;
+}
+
+/*Estilos menu*/
+
+ul.nav-items li {
+  display: block;
+}
+
+ul.nav-items a {
+  color: #00838f;
+  font-weight: bold !important;
+  display: block;
+  line-height: 3em;
+  font-size: 17px;
+}
+
+ul.nav-items li:first-child a {
+  border-top: 2px solid transparent;
+}
+
+ul.nav-items li a span {
+  border-left: 3px solid;
+  padding: 0.4em 0.5em;
+}
