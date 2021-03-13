@@ -6,7 +6,7 @@
   padding: 0 20px;
   line-height: 70px;
 }
-
+ 
 .control-menu a span {
   display: inline-block;
   height: 30px;
@@ -39,8 +39,9 @@ ul.nav-items {
 /*Desplegable*/
 #navigation:target ul.nav-items {
   background: #f0f0f0 none repeat scroll 0 0;
-  height: 10em;
+  height: 13em;
   transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+  position: relative;
 }
 
 .close {

@@ -2,6 +2,8 @@
 import React from "react";
 import "./MovilNav.css";
 
+import CardWidget from "../../CardWidget/CardWidget";
+
 //Componente de navbar opcional solo usado si al pantala posee un ancho menor a 7000
 export default function MovilNav() {
   return (
@@ -30,6 +32,11 @@ export default function MovilNav() {
           <a href="#">
             <span>Contacto</span>
           </a>
+        </li>
+        <li>  
+            <span>
+              <CardWidget />
+            </span>
         </li>
       </ul>
     </nav>

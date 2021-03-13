@@ -4,6 +4,9 @@
 /*Body font*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto:wght@300&display=swap");
 
+/*Salute*/
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 body {
   margin: 0;
   padding: 0;

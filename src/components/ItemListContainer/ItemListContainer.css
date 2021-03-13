@@ -1,0 +1,24 @@
+.list-container {
+  display: block;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+}
+p.list-container {
+  text-align: center;
+}
+
+.salute {
+  font-family: "Architects Daughter", cursive;
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.lema {
+  text-align: center;
+}
+
+.invitacion {
+  text-align: center;
+}

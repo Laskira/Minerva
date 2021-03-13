@@ -1,6 +1,8 @@
 import React from "react";
 import "./WebNav.css";
 
+import CardWidget from "../../CardWidget/CardWidget";
+
 function WebNav() {
   return (
     <nav>
@@ -14,6 +16,7 @@ function WebNav() {
         <li>
           <a href="/">Contacto</a>
         </li>
+        <CardWidget />
       </ul>
     </nav>
   );
