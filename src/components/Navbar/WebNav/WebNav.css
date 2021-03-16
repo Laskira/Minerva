@@ -1,6 +1,7 @@
 a {
   color: #fff;
   text-decoration: none;
+  
 }
 ul,
 ol,
@@ -25,4 +26,3 @@ nav {
 a:hover {
   font-weight: bold;
 }
-

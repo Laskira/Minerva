@@ -9,16 +9,11 @@ p.list-container {
 }
 
 .salute {
-  font-family: "Architects Daughter", cursive;
+  font-family: 'Baskervville', serif;
   font-size: 4.5rem;
   text-align: center;
-  font-weight: bold;
 }
 
-.lema {
-  text-align: center;
-}
-
-.invitacion {
+.text {
   text-align: center;
 }

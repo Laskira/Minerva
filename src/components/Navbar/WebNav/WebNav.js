@@ -8,7 +8,7 @@ function WebNav() {
     <nav>
       <ul className="menu">
         <li>
-          <a href="/">Libros</a>
+          <a href="/" className="text-white">Libros</a>
         </li>
         <li>
           <a href="/">Ebooks</a>
@@ -16,7 +16,7 @@ function WebNav() {
         <li>
           <a href="/">Contacto</a>
         </li>
-        <CardWidget />
+        <CardWidget/>
       </ul>
     </nav>
   );

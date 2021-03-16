@@ -33,10 +33,10 @@ export default function MovilNav() {
             <span>Contacto</span>
           </a>
         </li>
-        <li>  
-            <span>
-              <CardWidget />
-            </span>
+        <li>
+          <span>
+            <CardWidget />
+          </span>
         </li>
       </ul>
     </nav>

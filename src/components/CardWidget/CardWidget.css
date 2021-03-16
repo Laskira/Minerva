@@ -1,17 +1,9 @@
 .cart {
   padding: 0 20px;
-  background-repeat: no-repeat;
-  background: #455a64;
 }
 
 button.cart {
   border-radius: 15px;
-  width: 70px;
   height: 40px;
-}
-
-img.cart {
-  display: flex;
-  align-content: center;
-  justify-content: center;
+  background: #00838f;  
 }
