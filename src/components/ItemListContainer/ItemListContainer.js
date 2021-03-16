@@ -4,7 +4,7 @@ import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 export default function ItemListContainer({ salute }) {
 
-  const initial = 0;
+  const initial = 1;
   const stock = 10;
   
   return (
