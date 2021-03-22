@@ -2,7 +2,6 @@
   display: block;
   align-content: center;
   justify-content: center;
-  padding: 20px;
 }
 p.list-container {
   text-align: center;
@@ -16,4 +15,17 @@ p.list-container {
 
 .text {
   text-align: center;
+}
+
+.catalogo {
+  width: 100%;
+  background: #EEEEEE;
+}
+
+.catalogo h2 {
+  color: #424242;
+  text-align: center;
+  text-decoration: bold;
+ font-size: 2em;
+ padding: 20px;
 }

@@ -16,11 +16,11 @@ export default function App() {
       setSalute("¡Buenos días!");
     }
 
-    if (today.getHours() >= 12 && today.getHours() <= 19) {
+    if (today.getHours() >= 12 && today.getHours() <= 18) {
      setSalute("¡Buenas tardes!");
     }
 
-    if (today.getHours() >= 20 && today.getHours() <= 23) {
+    if (today.getHours() >= 19 && today.getHours() <= 23) {
       setSalute("¡Buenas noches!");
     }
 

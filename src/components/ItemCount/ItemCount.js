@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ItemCount.css";
 
-//Alert
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-
 //Material Component
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
@@ -14,16 +10,15 @@ import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
-export default function ItemCount({ initial, stock }) {
+export default function ItemCount({ initial, stock, onAdd }) {
+
   //Contador
   const [count, setCount] = useState(initial);
-
-  //Alert
-  const MySwal = withReactContent(Swal);
 
   useEffect(() => {
     setCount(initial);
   }, [initial]);
+
 
   const add = () => setCount(count + 1);
 
@@ -35,37 +30,7 @@ export default function ItemCount({ initial, stock }) {
     }
   };
 
-  const onAdd = () => {
-    if (count === 0) {
-      MySwal.fire({
-        title: "Uy",
-        text: `Todavía no tienes libros en tu carrito`,
-        icon: "warning",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else {
-      MySwal.fire({
-        title: "Comprar",
-        text: `¿Estas seguro de que vas comprar ${count} libros?`,
-        icon: "info",
-        showCancelButton: true,
-        confirmButtonColor: "#00838f",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Sí, comprar",
-        cancelButtonText: "Cancelar",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Disfruta tu compra",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-    }
-  };
+ 
   return (
     <div className="centerE">
       <h3>Count Component</h3>
@@ -79,7 +44,7 @@ export default function ItemCount({ initial, stock }) {
       </ButtonGroup>
 
       <p>Libros seleccionados: {count}</p>
-      <Button type="button" variant="outlined" onClick={onAdd}>
+      <Button type="button" variant="outlined" onClick={() => onAdd(count)}>
         Añadir al carrito <ShoppingCartIcon />
       </Button>
     </div>
