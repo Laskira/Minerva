@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 //Components
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 export default function App() {
-
-  const [salute, setSalute] = useState('');
+  const [salute, setSalute] = useState("");
 
   useEffect(() => {
     const today = new Date();
@@ -17,7 +16,7 @@ export default function App() {
     }
 
     if (today.getHours() >= 12 && today.getHours() <= 18) {
-     setSalute("¡Buenas tardes!");
+      setSalute("¡Buenas tardes!");
     }
 
     if (today.getHours() >= 19 && today.getHours() <= 23) {
@@ -27,11 +26,11 @@ export default function App() {
     if (today.getHours() >= 0 && today.getHours() <= 5) {
       setSalute("¡Buenas noches!");
     }
-  }, [])
-  
+  }, []);
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
       <ItemListContainer salute={salute} />
     </div>
   );

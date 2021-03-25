@@ -11,7 +11,7 @@ export default function Item({ item }) {
       <div className="description-container">
         <h3 className="bookName">{item.title}</h3>
         <p className="autor">{item.autor}</p>
-        <p>$ {item.price} </p>
+        <p className="price">$ {item.price} </p>
       </div>
     </div>
   );

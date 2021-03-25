@@ -1,8 +1,8 @@
 .card-container {
-  display: flex;
-  border-bottom: 1px;
   background: #fff;
   color: #000;
+  display: table-cell;
+   border-radius: 16px;
 }
 
 .card-container:hover {
@@ -13,8 +13,14 @@
 
 
 .portada {
+  display: inline-block;
   width: 200px;
-  height: 200px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 18px;
+
 }
 
 .portada img {
@@ -25,12 +31,20 @@
 
 .description-container {
   width: 100%; 
+  margin: 0 auto;
+  line-height: 5px;
 }
 
 .autor {
-    color: #BDBDBD;
+  color: #BDBDBD !important;
+  font-size: 12px;
 }
 
 .bookName {
   text-align: center !important;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 14px;
 }

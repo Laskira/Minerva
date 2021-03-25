@@ -4,6 +4,8 @@ import "./MovilNav.css";
 
 import CardWidget from "../../CardWidget/CardWidget";
 
+// import {Link} from 'react-router-dom';
+
 //Componente de navbar opcional solo usado si al pantala posee un ancho menor a 7000
 export default function MovilNav() {
   return (
