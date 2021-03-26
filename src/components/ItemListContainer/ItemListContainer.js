@@ -8,7 +8,6 @@ import withReactContent from "sweetalert2-react-content";
 //Components
 import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 //Alert
 const MySwal = withReactContent(Swal);
@@ -110,9 +109,6 @@ export default function ItemListContainer({ salute }) {
         <h2>Nuestros productos</h2>
         <ItemList items={items} />
       </div>
-
-      <h2 className="detail-title">Nuestra oferta del mes</h2>
-            <ItemDetailContainer />
 
       <div>
         <ItemCount initial={initial} stock={stock} onAdd={onAdd} />

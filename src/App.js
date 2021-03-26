@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 //Components
-import Navbar from './components/Navbar/Navbar';
+import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
+//Router
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 export default function App() {
   const [salute, setSalute] = useState("");
@@ -29,9 +33,23 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navbar/>
-      <ItemListContainer salute={salute} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer salute={salute} />
+          </Route>
+
+          <Route path="/item">
+          <h2 className="detail-title">Nuestra oferta del mes</h2>
+            <ItemDetailContainer />
+          </Route>
+
+          {/* 404 */}
+          <Route path="*">404</Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
