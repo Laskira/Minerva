@@ -70,6 +70,5 @@ export default function App() {
         </Switch>
       </div>
     </BrowserRouter>
->>>>>>> Stashed changes
   );
 }
