@@ -4,16 +4,12 @@ import "./App.css";
 //Components
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-<<<<<<< Updated upstream
-=======
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Salute from "./components/Salute/Salute";
 import Error from "./components/Error/Error";
 
 //Router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-
 
 export default function App() {
   const [salute, setSalute] = useState("");
