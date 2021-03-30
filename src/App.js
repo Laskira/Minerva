@@ -12,7 +12,6 @@ import Error from "./components/Error/Error";
 
 //Router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
->>>>>>> Stashed changes
 
 
 
@@ -40,12 +39,6 @@ export default function App() {
   }, []);
 
   return (
-<<<<<<< Updated upstream
-    <div className="App">
-      <Navbar/>
-      <ItemListContainer salute={salute} />
-    </div>
-=======
     <BrowserRouter>
       <div className="App">
         <Navbar />

@@ -145,26 +145,17 @@ export default function ItemListContainer() {
             <ItemList items={items} />
           </div>
 
-<<<<<<< Updated upstream
-      <h2 className="detail-title">Nuestra oferta del mes</h2>
-            <ItemDetailContainer />
-
-      <div>
-        <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
-      </div>
-=======
           <div>
             <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
           </div>
         </div>
       ) : (
         //Loading
-        <div className="load">
+        <div className="load">  
           <Loader type="TailSpin" height={250} width={250} color="#E6F4F1" />
           <p>Espera un segundo</p>
         </div>
       )}
->>>>>>> Stashed changes
     </div>
   );
 }

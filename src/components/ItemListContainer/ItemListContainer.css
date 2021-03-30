@@ -1,45 +1,28 @@
 .list-container {
   display: block;
-  margin-bottom:auto;
+  margin-bottom: auto;
 }
 p.list-container {
   text-align: center;
 }
 
-<<<<<<< Updated upstream
 .salute-container {
   height: auto;
-  background: #EEEEEE;
+  background: #eeeeee;
   padding: 3em;
 }
 
 .salute {
-  font-family: 'Baskervville', serif;
+  font-family: "Baskervville", serif;
   font-size: 4.5rem;
   text-align: center;
 }
 
-=======
->>>>>>> Stashed changes
 .text {
   text-align: center;
   font-size: 1em;
 }
 
-<<<<<<< Updated upstream
-.catalogo {
-  
-  border: 4px outset #455A64;
-}
-
-.catalogo h2 {
-  color: #424242;
-  text-align: center;
-  text-decoration: bold;
- font-size: 2em;
- padding: 20px;
-
-=======
 .catalogo h2 {
   color: #00838f;
   text-align: center;
@@ -57,5 +40,4 @@ p.list-container {
 }
 .load p {
   font-size: 22px;
->>>>>>> Stashed changes
 }
