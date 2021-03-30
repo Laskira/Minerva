@@ -1,6 +1,10 @@
-
 .detail-container {
   display: grid;
   align-items: center;
   justify-items: center;
+  width: 100vw;
 }
+.load p {
+  font-size: 22px;
+}
+

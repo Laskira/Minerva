@@ -8,7 +8,6 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
 export default function ItemDetail({ item }) {
-  // const loading = true;
   return (
     <div className="card">
       <div className="card-text">
@@ -16,7 +15,7 @@ export default function ItemDetail({ item }) {
           <img src={item.imageUrl} alt={item.title} />
         </div>
         <div className="title-total">
-          <div className="title">Precio: {item.price}$</div>
+          <div className="title">Precio: {item.price} $</div>
           <h2>{item.title}</h2> {item.autor}
           <div className="desc">{item.description}</div>
           <div className="actions">

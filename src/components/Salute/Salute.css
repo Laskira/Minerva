@@ -1,0 +1,17 @@
+.salute-container {
+  height: auto;
+  /* background: #EEEEEE; */
+  padding: 3em;
+  background-image: linear-gradient(
+    185deg,
+    #ffffff 0,
+    #f0f0f1 50%,
+    #d5d5ca 100%
+  );
+}
+
+.salute {
+  font-family: "Baskervville", serif;
+  font-size: 4.5rem;
+  text-align: center;
+}

@@ -5,6 +5,8 @@ import "./Navbar.css";
 import MovilNav from "./MovilNav/MovilNav";
 import WebNav from "./WebNav/WebNav";
 
+import {Link} from 'react-router-dom';
+
 export default function Navbar() {
   const [widthWindow, setWidthWindow] = useState(window.innerWidth);
 
@@ -19,7 +21,7 @@ export default function Navbar() {
   return (
     <header className="navigation">
       <div className="logo">
-        <a href="/">Minerva</a>
+        <Link to="/">Minerva</Link>
       </div>
       
       {/*Condicional para responsive, según el ancho de la pantalla se redenriza un elemento  */}

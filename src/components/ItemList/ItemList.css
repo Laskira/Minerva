@@ -1,8 +1,7 @@
 .list-group {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2em;
-  padding: 20px;
+  gap: 1.5em;
 }
 
 .item-list {
@@ -10,9 +9,6 @@
   border: 1px solid #ccc;
 }
 
-.catalogo {
-  padding-bottom: 30px;
-}
 
 /* Mostrar tres columnas en el catalogo */
 @media screen and (max-width: 900px) {

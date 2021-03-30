@@ -4,7 +4,7 @@ import "./MovilNav.css";
 
 import CardWidget from "../../CardWidget/CardWidget";
 
-// import {Link} from 'react-router-dom';
+ import {Link} from 'react-router-dom';
 
 //Componente de navbar opcional solo usado si al pantala posee un ancho menor a 7000
 export default function MovilNav() {
@@ -21,19 +21,20 @@ export default function MovilNav() {
 
       <ul className="nav-items">
         <li>
-          <a href="#">
+          <Link  to={`/category/libros`}>
             <span>Libros</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/category/ebooks">
             <span>Ebooks</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          {/* This component is on develoment */}
+          <Link to="/404">
             <span>Contacto</span>
-          </a>
+          </Link>
         </li>
         <li>
           <span>

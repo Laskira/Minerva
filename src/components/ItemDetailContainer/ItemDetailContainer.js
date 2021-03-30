@@ -1,37 +1,64 @@
 import React, { useState, useEffect } from "react";
 
-import ItemDetail from '../ItemDetail/ItemDetail';
+//Load
+import Loader from "react-loader-spinner";
+
+import { useParams } from "react-router-dom";
+
+//Component
+import ItemDetail from "../ItemDetail/ItemDetail";
+
 import "./ItemDetailContainer.css";
 
-const getItems = () => {
+let load = true;
+
+const getItems = (id, des) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         id: 1,
-        title: "Dune",
-        price: "20.000",
-        imageUrl: "https://www.andeslibreria.com/54469/85508.jpg",
-        description:
-          "Arrakis: un planeta desértico donde el agua es el bien más preciado y, donde llorar a los muertos es el símbolo de máxima prodigalidad. Paul Atreides: un adolescente marcado por un destino singular, dotado de extraños poderes y, abocado a convertirse en dictador, mesías y mártir.",
         autor: "Frank Herbert",
-      })
-    }, 2000)
-  })
-}
+        title: id.title,
+        price: "20.000",
+        imageUrl:"https://www.andeslibreria.com/54469/85508.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum temporibus, accusantium voluptas iste nostrum est earum quae dignissimos inventore quas! Neque impedit dolore eius asperiores aliquid! Doloribus in itaque ipsam."
+      
+      });
+      load = false;
+    }, 2000);
+  });
+};
 
-function ItemDetailContainer() {
+export default function ItemDetailContainer() {
+  const [item, setItem] = useState([]);
+  const { itemId } = useParams();
 
-  const [item, setItem] = useState([])
+
   useEffect(() => {
-    getItems().then((res) => setItem(res))
+    getItems(itemId).then((res) => setItem(res));
+    load = false;
     return;
-  }, [])
+  }, [itemId]);
 
   return (
-   <div className="detail-container">
-      <ItemDetail item={item} />      
-   </div>
+    <div className="detail-container">
+      <h2 className="detail-title">
+        {!itemId
+          ? `Nuestra oferta del mes`
+          : `${itemId} una aventura de tu talla`}
+      </h2>
+
+      {!load ? (
+        //Página principal
+        <ItemDetail item={item} />
+      ) : (
+        //Loading
+        <div className="load">
+          <Loader type="TailSpin" height={300} width={300} color="#E6F4F1" />
+          <p>Espera un segundo</p>
+        </div>
+      )}
+    </div>
   );
 }
 
-export default ItemDetailContainer;

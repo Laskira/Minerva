@@ -49,6 +49,7 @@
   width: 200px;
   height: 300px;
   display: block;
+  padding: 29px;
 }
 
 .portada img {
@@ -76,4 +77,28 @@
 
 .action-button:hover {
   transform: rotate(22deg)
+}
+
+.detail-title {
+  text-align: center;
+  font-size: 2em;
+  padding: 20px;
+}
+
+@media screen and (max-width: 870px) {
+  .card {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 500px;
+  }
 }

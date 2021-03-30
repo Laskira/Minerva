@@ -4,6 +4,17 @@ import "./App.css";
 //Components
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+<<<<<<< Updated upstream
+=======
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Salute from "./components/Salute/Salute";
+import Error from "./components/Error/Error";
+
+//Router
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+>>>>>>> Stashed changes
+
+
 
 export default function App() {
   const [salute, setSalute] = useState("");
@@ -29,9 +40,36 @@ export default function App() {
   }, []);
 
   return (
+<<<<<<< Updated upstream
     <div className="App">
       <Navbar/>
       <ItemListContainer salute={salute} />
     </div>
+=======
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Salute salute={salute} />
+            <ItemListContainer />
+          </Route>
+
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer />
+          </Route>
+
+          <Route path="/item/:itemId/:itemDes">
+            <ItemDetailContainer />
+          </Route>
+
+          {/* 404 */}
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
+>>>>>>> Stashed changes
   );
 }
