@@ -11,7 +11,6 @@ import Loader from "react-loader-spinner";
 //Components
 import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 //Router
 import { useParams } from "react-router-dom";
