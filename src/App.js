@@ -41,8 +41,11 @@ export default function App() {
             <ItemListContainer salute={salute} />
           </Route>
 
-          <Route path="/item">
-          <h2 className="detail-title">Nuestra oferta del mes</h2>
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer />
+          </Route>
+
+          <Route path="/item/:itemId">
             <ItemDetailContainer />
           </Route>
 
