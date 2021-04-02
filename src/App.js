@@ -10,6 +10,7 @@ import Error from "./components/Error/Error";
 
 //Router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 
 export default function App() {
   const [salute, setSalute] = useState("");
@@ -48,8 +49,12 @@ export default function App() {
             <ItemListContainer />
           </Route>
 
-          <Route path="/item/:itemId/:itemDes">
+          <Route exact path="/item/:itemId">
             <ItemDetailContainer />
+          </Route>
+   
+          <Route exact path="/cart">
+            <Cart />
           </Route>
 
           {/* 404 */}

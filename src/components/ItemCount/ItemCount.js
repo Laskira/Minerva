@@ -11,14 +11,12 @@ import RemoveIcon from "@material-ui/icons/Remove";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 export default function ItemCount({ initial, stock, onAdd }) {
-
   //Contador
   const [count, setCount] = useState(initial);
 
   useEffect(() => {
     setCount(initial);
   }, [initial]);
-
 
   const add = () => setCount(count + 1);
 
@@ -30,23 +28,31 @@ export default function ItemCount({ initial, stock, onAdd }) {
     }
   };
 
- 
   return (
-    <div className="centerE">
-      <h3>Count Component</h3>
-      <ButtonGroup disableElevation variant="outlined">
-        <Button onClick={remove}>
-          <RemoveIcon />
-        </Button>
-        <Button onClick={add} disabled={count === stock}>
-          <AddIcon />
-        </Button>
-      </ButtonGroup>
-
-      <p>Libros seleccionados: {count}</p>
-      <Button type="button" variant="outlined" onClick={() => onAdd(count)}>
+    <div className="count-container">
+      {/* <h3>Count Component</h3> */}
+      <div>
+        <p>Libros seleccionados: {count}</p>
+        <ButtonGroup disableElevation variant="outlined">
+          <Button onClick={remove}>
+            <RemoveIcon />
+          </Button>
+          <Button onClick={add} disabled={count === stock}>
+            <AddIcon />
+          </Button>
+        </ButtonGroup>
+      </div>
+      <div className="button-container">
+      <Button
+        type="button"
+        variant="outlined"
+        size="medium"
+        onClick={() => onAdd(count)}
+        className="cart-button"
+      >
         Añadir al carrito <ShoppingCartIcon />
       </Button>
+      </div>
     </div>
   );
 }

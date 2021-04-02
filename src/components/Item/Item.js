@@ -22,7 +22,7 @@ export default function Item({ item }) {
         <p className="price">$ {item.price} </p>
 
         <div className="cart-button">
-          <Link to={`/item/${item.title}/${item.imageUrl}`}>
+          <Link to={`/item/${item.title}`}>
           <Button
             variant="contained"
             endIcon={<AddShoppingCartIcon></AddShoppingCartIcon>}

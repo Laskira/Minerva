@@ -37,7 +37,7 @@
 }
 
 .card-text p {
-  text-align:center;
+  text-align: center;
 }
 
 .title-total {
@@ -72,11 +72,11 @@
   width: 130px;
   height: 130px;
   cursor: pointer;
-  transition:.5s;
+  transition: 0.5s;
 }
 
 .action-button:hover {
-  transform: rotate(22deg)
+  transform: rotate(22deg);
 }
 
 .detail-title {
@@ -84,6 +84,24 @@
   font-size: 2em;
   padding: 20px;
 }
+
+.confirm {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: bold;
+}
+
+button.confirm {
+  background: #00838f;
+  color: #fff;
+}
+
+button.confirm:hover {
+  background: #00cbdd;
+  color: #fff;
+}
+
 
 @media screen and (max-width: 870px) {
   .card {
