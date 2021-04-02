@@ -18,14 +18,10 @@ const MySwal = withReactContent(Swal);
 
 export default function ItemDetail({ item }) {
   const [count, setCount] = useState(0);
-  const [alert, setAlert] = useState(false);
 
   const addItem = (counter) => {
     setCount(counter);
-    console.log(count);
-    if (count < 1) {
-      setAlert(true);
-      if (alert === true) {
+    if (counter === 0) {
         MySwal.fire({
           title: "Uy",
           text: `Todavía no tienes libros en tu carrito`,
@@ -33,12 +29,10 @@ export default function ItemDetail({ item }) {
           showConfirmButton: false,
           timer: 1500,
         });
-        setAlert(false);
-      }
     } 
     
-    if(count => 1){
-      console.log(`Comprando ${count}`);
+    if(counter => 1){
+      console.log(`Comprando ${counter}`);
     }
   };
 
