@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 //Alert
 import Swal from "sweetalert2";
@@ -13,25 +13,34 @@ import ItemCount from "../ItemCount/ItemCount";
 
 import { Link } from "react-router-dom";
 
+//Context
+import { CartContext } from "../../context/CartContext";
+
 //Alert Const
 const MySwal = withReactContent(Swal);
 
 export default function ItemDetail({ item }) {
   const [count, setCount] = useState(0);
 
+  const { addBookToCart } = useContext(CartContext);
+
   const addItem = (counter) => {
     setCount(counter);
+    //Context
+    addBookToCart(item, counter);
     if (counter === 0) {
-        MySwal.fire({
-          title: "Uy",
-          text: `Todavía no tienes libros en tu carrito`,
-          icon: "warning",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-    } 
-    
-    if(counter => 1){
+      MySwal.fire({
+        title: "Uy",
+        text: `Todavía no tienes libros en tu carrito`,
+        icon: "warning",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+
+    if ((counter) => 1) {
+      //Se guarda el item y el contador
+      addBookToCart(item, counter);
       console.log(`Comprando ${counter}`);
     }
   };

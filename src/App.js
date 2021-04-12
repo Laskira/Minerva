@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 //Components
-import Navbar from './components/Navbar/Navbar';
+import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Salute from "./components/Salute/Salute";
 import Error from "./components/Error/Error";
+import Cart from "./components/Cart/Cart";
 
 //Router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Cart from "./components/Cart/Cart";
+//Context
+import CartProvider from "./context/CartContext";
 
 export default function App() {
   const [salute, setSalute] = useState("");
@@ -36,33 +38,35 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Salute salute={salute} />
-            <ItemListContainer />
-          </Route>
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Salute salute={salute} />
+              <ItemListContainer />
+            </Route>
 
-          <Route exact path="/category/:categoryId">
-            <ItemListContainer />
-          </Route>
+            <Route exact path="/category/:categoryId">
+              <ItemListContainer />
+            </Route>
 
-          <Route exact path="/item/:itemId">
-            <ItemDetailContainer />
-          </Route>
-   
-          <Route exact path="/cart">
-            <Cart />
-          </Route>
+            <Route exact path="/item/:itemId">
+              <ItemDetailContainer />
+            </Route>
 
-          {/* 404 */}
-          <Route path="*">
-            <Error />
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+
+            {/* 404 */}
+            <Route path="*">
+              <Error />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+   </CartProvider> 
   );
 }
