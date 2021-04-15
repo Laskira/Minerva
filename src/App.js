@@ -60,6 +60,10 @@ export default function App() {
               <Cart />
             </Route>
 
+            <Route exact path="/catalogo">
+            <ItemListContainer />
+            </Route>
+
             {/* 404 */}
             <Route path="*">
               <Error />

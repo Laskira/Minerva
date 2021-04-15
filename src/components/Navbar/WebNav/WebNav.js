@@ -3,10 +3,10 @@ import "./WebNav.css";
 
 //Shoping cart
 import CardWidget from "../../CardWidget/CardWidget";
-
 import { Link } from "react-router-dom";
 
 function WebNav() {
+   
   return (
     <nav>
       <ul className="menu">
@@ -22,7 +22,7 @@ function WebNav() {
           {/* This component is on develoment */}
           <Link to="/404">Contacto</Link>
         </li>
-        <CardWidget />
+        <CardWidget/>
       </ul>
     </nav>
   );

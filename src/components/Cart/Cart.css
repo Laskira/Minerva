@@ -1,4 +1,24 @@
-.center-cart {
-    text-align: center;
-    font-size: 3em;
+.empty {
+  text-align: center;
+}
+
+.empty div {
+  align-items: center;
+  display: grid;
+}
+
+
+.portada {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  display: block;
+  padding: 29px;
+}
+
+.portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }

@@ -1,13 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./MovilNav.css";
-
+//Shoping cart
 import CardWidget from "../../CardWidget/CardWidget";
 
  import {Link} from 'react-router-dom';
 
 //Componente de navbar opcional solo usado si al pantala posee un ancho menor a 7000
 export default function MovilNav() {
+
   return (
     <nav id="navigation">
       <div className="control-menu">
@@ -38,7 +39,7 @@ export default function MovilNav() {
         </li>
         <li>
           <span>
-            <CardWidget />
+          <CardWidget />
           </span>
         </li>
       </ul>

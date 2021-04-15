@@ -39,21 +39,9 @@ export default function ItemDetail({ item }) {
     }
 
     if ((counter) => 1) {
-      //Se guarda el item y el contador
-      addBookToCart(item, counter);
       console.log(`Comprando ${counter}`);
     }
   };
-
-  const confirmarCompra = () => {
-    Swal.fire({
-      title: "Disfruta tu compra",
-      icon: "success",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
-
   //const stock
   const initial = 1;
   const stock = 5;
@@ -66,7 +54,7 @@ export default function ItemDetail({ item }) {
         </div>
         <div className="title-total">
           <div className="title">Precio: {item.price}$</div>
-          <h2>{item.title}</h2> {item.autor}
+          {/* <h2>{item.title}</h2> {item.autor} */}
           <div className="desc">{item.description}</div>
           <div className="actions">
             {/* Count componet */}
@@ -81,7 +69,6 @@ export default function ItemDetail({ item }) {
               <div className="confirm">
                 <Link to="/cart">
                   <Button
-                    onClick={confirmarCompra}
                     variant="contained"
                     size="large"
                     className="confirm"

@@ -55,8 +55,15 @@
 }
 
 .cart-button button {
-  /* border-radius: 15px; */
   height: 40px;
   background: #00838f;
   color: #fff;
+}
+
+.counter {
+  /* background: #aec4c7; */
+  padding: 5px;
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 14px;
 }
