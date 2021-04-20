@@ -15,6 +15,9 @@ import ItemList from "../ItemList/ItemList";
 //Router
 import { useParams } from "react-router-dom";
 
+//Firestone
+import { getFirestore } from "../../firebase/client.js";
+
 //Alert Const
 const MySwal = withReactContent(Swal);
 
@@ -57,75 +60,52 @@ export default function ItemListContainer() {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const data = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([
-          {
-            id: 1,
-            title: "Dune",
-            price: 20000,
-            imageUrl: "https://www.andeslibreria.com/54469/85508.jpg",
-            autor: "Frank Herbert",
-            book: true,
-            stock: 2,
-            ebook: true,
-          },
-          {
-            id: 2,
-            title: "Un mundo feliz",
-            price: 14000,
-            imageUrl:
-              "https://images.cdn1.buscalibre.com/fit-in/360x360/c1/8c/c18cdeb80fa6f9a212a1cc5639e94c6d.jpg",
-            autor: "Aldous Huxley",
-            book: true,
-            stock: 1,
-            ebook: false,
-          },
-          {
-            id: 3,
-            title: "Viaje al centro de la tierra",
-            price: 60000,
-            imageUrl:
-              "https://i1.wp.com/cangrejoeditores.com//wp-content/uploads/2014/10/jl_viaje_centro_tierra.jpg?fit=482%2C664&ssl=1",
-            autor: "Julio Verne",
-            book: true,
-            stock: 5,
-            ebook: true,
-          },
-          {
-            id: 4,
-            title: "Envueltos en plástico",
-            price: 20000,
-            imageUrl:
-              "https://img.wattpad.com/c45ed5d864f3bc63057e0a36ba9d40f869ed0bc5/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f674f697836372d47735255455f513d3d2d3239373334393437312e313436613330653562643835336531363433303232373437393736342e706e67?s=fit&w=720&h=720",
-            autor: "Anónimo",
-            book: false,
-            ebook: true,
-          },
-        ]);
-        setLoad(false);
-      }, 2000);
-    });
+    const database = getFirestore();
+    const itemsCollection = database.collection("items");
 
-    data.then((result) => {
-      setItems(result);
+    //Loader
+    setTimeout(() => {
+      setLoad(false);
+    }, 1500);
 
-      if (categoryId === "libros") {
-        let bookFilter = result.filter((res) => {
-          return res.book;
-        });
-        result = bookFilter;
-        setItems(result);
-      }
+    if (categoryId === "libros") {
+      const bookFilter = itemsCollection.where("book", "==", true);
+      const book = bookFilter.get();
 
-      if (categoryId === "ebooks") {
-        let ebookFilter = result.filter((res) => {
-          return res.ebook;
-        });
-        result = ebookFilter;
-        setItems(result);
-      }
-    });
+      book.then((snaptshot) => {
+        if (snaptshot.size > 0) {
+          setItems(
+            snaptshot.docs.map((doc) => {
+              return { id: doc.id, ...doc.data() };
+            })
+          );
+        }
+      });
+    } else if (categoryId === "ebooks") {
+      const ebookFilter = itemsCollection.where("ebook", "==", true);
+      const ebook = ebookFilter.get();
+
+      ebook.then((snaptshot) => {
+        if (snaptshot.size > 0) {
+          setItems(
+            snaptshot.docs.map((doc) => {
+              return { id: doc.id, ...doc.data() };
+            })
+          );
+        }
+      });
+    } else {
+      const prom = itemsCollection.get();
+      prom.then((snaptshot) => {
+        if (snaptshot.size > 0) {
+          setItems(
+            snaptshot.docs.map((doc) => {
+              return { id: doc.id, ...doc.data() };
+            })
+          );
+        }
+      });
+    }
   });
 
   //const stock
@@ -150,7 +130,7 @@ export default function ItemListContainer() {
         </div>
       ) : (
         //Loading
-        <div className="load">  
+        <div className="load">
           <Loader type="TailSpin" height={250} width={250} color="#E6F4F1" />
           <p>Espera un segundo</p>
         </div>

@@ -2,16 +2,28 @@
   text-align: center;
 }
 
+h2.empty {
+  font-size: 3em;;
+} 
+
 .empty div {
   align-items: center;
   display: grid;
 }
 
 
+.cart-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  align-items: center;
+  width: 100vw; 
+}
+
 .portada {
   display: inline-block;
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 270px;
   display: block;
   padding: 29px;
 }
@@ -21,4 +33,43 @@
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.center-books {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 100vw;
+}
+
+.book-selected {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 400px;
+  align-items: center;
+  border-radius: 5px; 
+}
+
+.factura {
+  text-align: center;
+  width: 400px;
+  height: 500px;
+  background: #eeee;
+  padding: 1em;
+  
+}
+
+.factura-separador {
+  border-top: 1px solid;
+  background-color: #262626;
+  height: 2px;
+  max-width: 300px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
+
+p.come-back {
+  /* background: #00838f !important; */
+  color: #00838f !important;
+  /* padding: 10px; */
 }

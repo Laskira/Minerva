@@ -12,6 +12,7 @@ const app = firebase.initializeApp({
 
 export const getFirebase= () => {
     return app;
+    
 }
 
 export const getFirestore = () => {

@@ -6,12 +6,20 @@ import Button from "@material-ui/core/Button";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
+
+//Alert
+import Swal from "sweetalert2";
+// import withReactContent from "sweetalert2-react-content";
 
 //Context
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
+  //Alert Const
+  // const MySwal = withReactContent(Swal);
+
   const { cart, clearCart, removeBookCart, sumaItems, precio } = useContext(
     CartContext
   );
@@ -25,6 +33,15 @@ export default function Cart() {
       setVisible(false);
     }
   }, [cart]);
+
+  const confirmarCompra = () => {
+    Swal.fire({
+      title: "Disfruta tu compra",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   return (
     <div>
@@ -47,47 +64,61 @@ export default function Cart() {
           </div>
         </>
       ) : (
-        <div>
-          <h2 className="empty">Total de libros seleccionados</h2>
-          {cart.map((cartItem) => (
-            <div key={cartItem.item}>
-              <img
-                src={cartItem.item.imageUrl}
-                alt={cartItem.item.title}
-                className="portada"
-              />
-              <p>Cantidad: {cartItem.cant} </p>
-              <p>
-                Valor por unidad:
-                {cartItem.item.price}
-              </p>
-              <div className="empty">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => removeBookCart(cartItem.item.id)}
-                >
-                  borrar
-                </Button>
+        <>
+          <h2 className="empty">Carrito de compras</h2>
+          <div className="cart-container">
+            {cart.map((cartItem) => (
+              <div key={cartItem.item} className="book-selected">
+                <div>
+                  <img
+                    src={cartItem.item.imageUrl}
+                    alt={cartItem.item.title}
+                    className="portada"
+                  />
+                </div>
+                <div>
+                  <p>Cantidad: {cartItem.cant} </p>
+                  <p>Valor por unidad: {cartItem.item.price}</p>
+                  <div className="empty">
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => removeBookCart(cartItem.item.id)}
+                    >
+                      borrar
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
 
-          <div className="empty">
-            <h4>Cantidad total: {sumaItems}</h4>
-            <h4>Valor total: {precio}</h4>
-            <Button variant="contained" color="secondary" onClick={clearCart}>
-              <DeleteOutlineIcon />
-              Vaciar carrito
-            </Button>
-            <Link to="/catalogo">
-              <Button variant="contained">
-                <ArrowBackIcon />
-                Volver al catalogo
+            <div className="factura">
+              <h2>Factura</h2>
+              <div class="factura-separador"></div>
+              <h4>Cantidad total: {sumaItems}</h4>
+              <h4>Total: {precio}</h4>
+
+              <Button variant="contained" color="secondary" onClick={clearCart}>
+                <DeleteOutlineIcon />
+                Vaciar carrito
               </Button>
-            </Link>
+
+              <Button
+                variant="contained"
+                onClick={() => confirmarCompra()}
+              >
+                <EmojiEmotionsIcon />
+                Comfirmar compra
+              </Button>
+              <p className="come-back">
+                <Link to="/catalogo">
+                  <ArrowBackIcon />
+                  Volver al catalogo
+                </Link>
+              </p>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
