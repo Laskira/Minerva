@@ -39,7 +39,7 @@ export default function ItemDetail({ item }) {
     }
 
     if ((counter) => 1) {
-      console.log(`Comprando ${counter}`);
+      console.log(`Comprando ${counter} ${item.title}`);
     }
   };
   //const stock

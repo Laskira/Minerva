@@ -3,22 +3,21 @@ import React, { useState, useEffect } from "react";
 //Declaración de context
 export const CartContext = React.createContext([]);
 
-export default function CartProvider({ defaultValue = [], children }) {
-  const [cart, setCart] = useState(defaultValue);
+export default function CartProvider({ children }) {
+  const [cart, setCart] = useState([]);
   const [sumaItems, setSumaItems] = useState(0);
   const [precio, setPrecio] = useState(0);
 
   useEffect(() => {
-    let precioTotal = cart.reduce((accumulador, ItemValue) => {
-      const value = ItemValue.cant * ItemValue.item.price;
-      return accumulador + value;
-    }, 0);
+    let totalItems = 0;
+    let precioTotal = 0;
 
-    let total = cart.reduce((accumulador, ItemValue) => {
-      return accumulador + ItemValue.cant;
-    }, 0);
+    for (let cartItem of cart) {
+      totalItems += cartItem.cant;
+      precioTotal += cartItem.cant * cartItem.item.price;
+    }
 
-    setSumaItems(total);
+    setSumaItems(totalItems);
     setPrecio(precioTotal);
   }, [cart]);
 

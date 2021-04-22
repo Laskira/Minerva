@@ -33,7 +33,7 @@ export default function ItemDetailContainer() {
 
     getItems(itemId).then((res) => {
       if (res.exists) {
-        setItem(res.data());
+        setItem({id:res.id, ...res.data()}) 
       }
     });
     load = false;

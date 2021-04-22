@@ -3,21 +3,20 @@
 }
 
 h2.empty {
-  font-size: 3em;;
-} 
+  font-size: 3em;
+}
 
 .empty div {
   align-items: center;
   display: grid;
 }
 
-
 .cart-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
   align-items: center;
-  width: 100vw; 
+  /* width: 100vw;  */
 }
 
 .portada {
@@ -47,16 +46,15 @@ h2.empty {
   grid-template-columns: repeat(2, 1fr);
   width: 400px;
   align-items: center;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .factura {
   text-align: center;
   width: 400px;
-  height: 500px;
-  background: #eeee;
+  height: 430px;
+  background: #e1e8ee;
   padding: 1em;
-  
 }
 
 .factura-separador {
@@ -68,8 +66,23 @@ h2.empty {
   margin: 20px auto 0 auto;
 }
 
-p.come-back {
-  /* background: #00838f !important; */
-  color: #00838f !important;
-  /* padding: 10px; */
+.come-back {
+  color: #0000 !important;
+}
+
+.factura-text {
+  text-align: left;
+}
+
+.client-input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 92%;
+  font-size: 12px;
 }
