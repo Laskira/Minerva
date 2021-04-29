@@ -14,7 +14,7 @@ Minerva es una tienda de literatura virtual que busca brindar al usuario la posi
 * React-loader-spinner - Loader
 
 ## Comprando un libro
-Ejemplo de una compra: ![](https://gfycat.com/fastimaginativearcherfish.gif)
+Ejemplo de una compra: https://gfycat.com/fastimaginativearcherfish.gif
 
 ---
 
