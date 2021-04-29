@@ -15,4 +15,4 @@ Minerva es una tienda de literatura virtual que busca brindar al usuario la posi
 
 ---
 
-Visitar aplicacción en funcionamiento: [title](https://www.example.com)
+Visitar aplicacción en funcionamiento: [Minerva](https://musing-montalcini-e84b89.netlify.app/)
