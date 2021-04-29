@@ -13,6 +13,9 @@ Minerva es una tienda de literatura virtual que busca brindar al usuario la posi
 * sweetalert2 y sweetalert2-react-content - Alertas luego personalizadas para la app
 * React-loader-spinner - Loader
 
+## Comprando un libro
+![Ejemplo de una compra](https://gfycat.com/fastimaginativearcherfish.gif)
+
 ---
 
 Visitar aplicacción en funcionamiento: [Minerva](https://musing-montalcini-e84b89.netlify.app/)
