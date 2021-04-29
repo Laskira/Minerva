@@ -8,7 +8,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Salute from "./components/Salute/Salute";
 import Error from "./components/Error/Error";
 import Cart from "./components/Cart/Cart";
-
+import Footer from './components/Footer/Footer';
 //Router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 //Context
@@ -46,6 +46,7 @@ export default function App() {
             <Route exact path="/">
               <Salute salute={salute} />
               <ItemListContainer />
+              <Footer/>
             </Route>
 
             <Route exact path="/category/:categoryId">

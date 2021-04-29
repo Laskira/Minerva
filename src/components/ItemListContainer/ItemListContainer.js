@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 
-//Alert
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-
 //Load
 import Loader from "react-loader-spinner";
 
 //Components
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 
 //Router
@@ -17,41 +12,6 @@ import { useParams } from "react-router-dom";
 
 //Firestone
 import { getFirestore } from "../../firebase/client.js";
-
-//Alert Const
-const MySwal = withReactContent(Swal);
-
-export const onAdd = (count) => {
-  if (count === 0) {
-    MySwal.fire({
-      title: "Uy",
-      text: `Todavía no tienes libros en tu carrito`,
-      icon: "warning",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  } else {
-    MySwal.fire({
-      title: "Comprar",
-      text: `¿Estas seguro de que vas comprar ${count} libros?`,
-      icon: "info",
-      showCancelButton: true,
-      confirmButtonColor: "#00838f",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Sí, comprar",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Disfruta tu compra",
-          icon: "success",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    });
-  }
-};
 
 export default function ItemListContainer() {
   const [items, setItems] = useState([]);
@@ -107,11 +67,6 @@ export default function ItemListContainer() {
       });
     }
   });
-
-  //const stock
-  const initial = 1;
-  const stock = 5;
-
   return (
     <div className="list-container">
       <div className="catalogo">
@@ -123,10 +78,7 @@ export default function ItemListContainer() {
           <div className="catalogo">
             <ItemList items={items} />
           </div>
-
-          <div>
-            <ItemCount initial={initial} stock={stock} onAdd={onAdd} />
-          </div>
+         
         </div>
       ) : (
         //Loading

@@ -9,7 +9,14 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import "./Item.css";
 
 export default function Item({ item }) {
-  
+  const stock = () => {
+    if (item.stock > 0) {
+      return <p>Disponibles {item.stock}</p>;
+    } else {
+      return <p>Agotado</p>;
+    }
+  };
+
   return (
     <div className="card-container">
       <div className="portada">
@@ -20,15 +27,25 @@ export default function Item({ item }) {
         <h3 className="bookName">{item.title}</h3>
         <p className="autor">{item.autor}</p>
         <p className="price">$ {item.price} </p>
-
+        {stock()}
         <div className="cart-button">
           <Link to={`/item/${item.id}`}>
-          <Button
-            variant="contained"
-            endIcon={<AddShoppingCartIcon></AddShoppingCartIcon>}
-          >
-            Comprar
-          </Button>
+            {item.stock > 0 ? (
+              <Button
+                variant="contained"
+                endIcon={<AddShoppingCartIcon></AddShoppingCartIcon>}
+              >
+                Comprar
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                endIcon={<AddShoppingCartIcon></AddShoppingCartIcon>}
+                disabled
+              >
+                Comprar
+              </Button>
+            )}
           </Link>
         </div>
       </div>

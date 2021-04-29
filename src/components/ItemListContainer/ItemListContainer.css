@@ -23,6 +23,10 @@ p.list-container {
   font-size: 1em;
 }
 
+.catalogo {
+  margin: 20px;
+}
+
 .catalogo h2 {
   color: #00838f;
   text-align: center;
@@ -30,6 +34,7 @@ p.list-container {
   font-size: 3em;
   padding: 20px;
   font-family: "Baskervville", serif;
+  
 }
 
 .load {

@@ -16,7 +16,6 @@ h2.empty {
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
   align-items: center;
-  /* width: 100vw;  */
 }
 
 .portada {
@@ -85,4 +84,20 @@ h2.empty {
   border-bottom: 1px solid #eee;
   width: 92%;
   font-size: 12px;
+}
+
+@media screen and (max-width: 850px) {
+  .cart-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+  .book-selected {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 400px;
+    align-items: center;
+    border-radius: 5px;
+  }
 }
